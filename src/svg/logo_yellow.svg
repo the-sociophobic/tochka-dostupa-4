@@ -1,0 +1,15 @@
+
+<svg width="434px" height="503px" viewBox="0 0 434 503" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Главная-(базовая---1366)" transform="translate(-450.000000, -179.000000)" fill="#FFA300">
+            <g id="Group" transform="translate(450.000000, 179.000000)">
+                <polygon id="Fill-1" points="0 501 78 501 78 198 0 198"></polygon>
+                <polygon id="Fill-2" points="349.168174 198 273.428328 395.561106 198.133943 198 112 198 235.775425 503 309.796247 503 434 198"></polygon>
+                <path d="M273,86.7727644 C313.927263,86.7727644 347.224601,120.071284 347.224601,161 L434,161 C434,72.083922 361.918637,0 273,0 C184.081363,0 112,72.083922 112,161 L198.775399,161 C198.775399,120.071284 232.072737,86.7727644 273,86.7727644" id="Fill-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>
