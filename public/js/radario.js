@@ -277,7 +277,7 @@ radario.initAnalyticsIframe = function () {
     this.analyticsIframe.style.position = 'fixed';
     this.analyticsIframe.style.top = "-9999px";
     this.analyticsIframe.style.left = "-9999px";
-    this.analyticsIframe.src = radario.toAbsolutePath('/widgets/analytics-hidden')
+    this.analyticsIframe.src = radario.toAbsolutePath('radario.ru/widgets/analytics-hidden')
 
     document.body.appendChild(this.analyticsIframe);
 }
@@ -537,11 +537,11 @@ radario.createStandAlone = function (opts) {
     var desktopPopupSrc = "";
     var parametersQueryString = this.toUrlQuery(parameters);
     if (opts.widgetKey) {
-        desktopPopupSrc = '/widgets/afisha/' + opts.widgetKey + '?' + parametersQueryString;
+        desktopPopupSrc = 'radario.ru/widgets/afisha/' + opts.widgetKey + '?' + parametersQueryString;
     } else if (opts.groupId) {
-        desktopPopupSrc = "/widgets/time-table/?groupId=" + opts.groupId + '&' + parametersQueryString
+        desktopPopupSrc = "radario.ru/widgets/time-table/?groupId=" + opts.groupId + '&' + parametersQueryString
     } else {
-        desktopPopupSrc = '/widgets/buy-tickets-popup?eventId=' + opts.eventIdOrKey + '&' + parametersQueryString;
+        desktopPopupSrc = 'radario.ru/widgets/buy-tickets-popup?eventId=' + opts.eventIdOrKey + '&' + parametersQueryString;
     }
     desktopPopupSrc = radario.composeUrl(radario.toAbsolutePath(desktopPopupSrc,  v));
     this.popupWidget.src = desktopPopupSrc;
@@ -560,13 +560,13 @@ radario.createStandAlone = function (opts) {
         var myUrl = null;
 
         if (opts.widgetKey) {
-            myUrl = '/widgets/afisha/mobile/' + opts.widgetKey;
+            myUrl = 'radario.ru/widgets/afisha/mobile/' + opts.widgetKey;
             this.popupWidget.height = "1060px";
         } else if (opts.groupId) {
-            myUrl = "/widgets/time-table/";
+            myUrl = "radario.ru/widgets/time-table/";
             parameters.groupId = opts.groupId;
         } else {
-            myUrl = 'radario.ru/widgets/mobile/' + opts.eventIdOrKey;
+            myUrl = 'radario.ruradario.ru/widgets/mobile/' + opts.eventIdOrKey;
         }
         myUrl += '?';
         this.popupWidget.src = radario.toAbsolutePath(myUrl + this.toUrlQuery(parameters), parameters.domain);
@@ -672,7 +672,7 @@ radario.createButton = function (o) {
     if (o.myScript.getAttribute('data-button-type') === 'branded') {
         buttonWidget.style.width = '160px';
         buttonWidget.style.height = '66px';
-        buttonWidget.style.backgroundImage = 'url(//radario.ru/content/img/branded-button.png)';
+        buttonWidget.style.backgroundImage = 'url(radario.ru/content/img/branded-button.png)';
     } else {
         buttonWidget.style.whiteSpace = 'nowrap';
         buttonWidget.style.padding = o.myScript.getAttribute('data-button-padding') || '9px 16px';
@@ -865,7 +865,7 @@ radario.changeUrl = function (option) {
         parameters[i] = utmData[i];
     }
     if (event) {
-        baseSrc = radario.toAbsolutePath("/widgets/buy-tickets-popup", option.domain);
+        baseSrc = radario.toAbsolutePath("radario.ru/widgets/buy-tickets-popup", option.domain);
         parameters.partnerId = affId;
         parameters.eventId = changeid;
         parameters.key = returnKey;
@@ -885,7 +885,7 @@ radario.changeUrl = function (option) {
         if (option.allowEventGrouping)
             parameters.allowEventGrouping = true;
 
-        baseSrc = radario.toAbsolutePath("/widgets/afisha/" + changeid, option.domain);
+        baseSrc = radario.toAbsolutePath("radario.ru/widgets/afisha/" + changeid, option.domain);
         if (isBackAction) {
             parameters.isBackAction = true;
         }
@@ -1007,9 +1007,9 @@ radario.openBuyPopup = function (options) {
     } catch(ex) {}
     if (radario.device.mobile() && !options.goods && options.mobileUse) {
         var params = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
-        var myUrl = (type === 'afisha' ? '/widgets/afisha/mobile/' : 'radario.ru/widgets/mobile/') + eventIdOrKey + '?';
+        var myUrl = (type === 'afisha' ? 'radario.ru/widgets/afisha/mobile/' : 'radario.ru/widgets/mobile/') + eventIdOrKey + '?';
         if (type === 'time-table') {
-            myUrl = "/widgets/time-table?"
+            myUrl = "radario.ru/widgets/time-table?"
             opts.groupId = options.id;
         }
         myUrl = radario.toAbsolutePath(myUrl + this.toUrlQuery(opts), options.domain);
@@ -1058,12 +1058,12 @@ radario.openBuyPopup = function (options) {
         radario.historyRadarioUrl({ id: eventIdOrKey })
     } else if (type === 'afisha') {
         this.popupWidgetAfisha = this.popupWidget;
-        src = radario.toAbsolutePath("/widgets/afisha/" + eventIdOrKey + '?' + this.toUrlQuery(opts), options.domain);
+        src = radario.toAbsolutePath("radario.ru/widgets/afisha/" + eventIdOrKey + '?' + this.toUrlQuery(opts), options.domain);
         radario.historyRadarioUrl({ id: eventIdOrKey, afisha: true })
     } else if (type = "time-table") {
         opts.groupId = options.id;
         this.popupWidgetAfisha = this.popupWidget;
-        src = radario.toAbsolutePath("/widgets/time-table?" + this.toUrlQuery(opts), options.domain);
+        src = radario.toAbsolutePath("radario.ru/widgets/time-table?" + this.toUrlQuery(opts), options.domain);
         radario.historyRadarioUrl({ id: eventIdOrKey, afisha: true })
     }
 

@@ -1,0 +1,329 @@
+
+.card,
+.ficher {
+  width: calc((100% - 2.570481%) / 2);
+  padding-top: calc(50% * 0.59965928);
+  margin-bottom: calc((100vw - 160px) * 0.02570481 * 0.9);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* FICHER */
+.ficher img.background {
+  width: 65.45%;
+}
+@media (min-width: 768px) {
+  .ficher.mobile {
+    margin: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    display: none;
+    position: absolute;
+  }
+}
+.ficher.mobile {
+  padding: 0;
+}
+.ficher.mobile .contents {
+  padding: 16px 8px;
+}
+.ficher.mobile h4,
+.ficher.mobile small {
+  padding: 0;
+  margin: 0;
+}
+.ficher.mobile h4 {
+  margin-bottom: 16px;
+}
+.ficher.mobile .row {
+  padding: 0;
+}
+
+/* CARD */
+@media (hover: hover) {
+  .card.shadowed::after {
+    background-color: #1A171B;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    top: 0;
+    left: 0;
+    opacity: .5;
+    position: absolute;
+    z-index: 10;
+    transition: opacity .2s;
+  }
+  .card:hover.shadowed::after {
+    opacity: .8;
+  }
+}
+.card h4,
+.ficher h4 {
+  font-family: Montserrat-ExtraBold, sans-serif;
+  /* font-size: 32px; */
+  font-size: 20px;
+  font-size: 2.2vw;
+  line-height: 1.25;
+  font-weight: normal;
+  margin-top: 2.2vw;
+  margin-bottom: 1.1vw;
+  padding: 0 1.1vw;
+  position: relative;
+}
+.card.abonement h4 {
+  color: #ffa300;
+  width: 60%;
+}
+@media (hover: hover) {
+  .card.abonement:hover h4 {
+    color: #1a171b;
+  }
+}
+.card.abonement button {
+  width: 35%;
+  min-width: 140px;
+  height: 39px;
+  background: #ffa300;
+  color: #1a171b;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color .2s, color .2s;
+  position: absolute;
+  
+}
+@media (hover: hover) {
+  .card.abonement:hover button {
+    background: black;
+    color: white;
+  }
+}
+.card small,
+.ficher small {
+  position: relative;
+  font-family: NotoSans-Regular, sans-serif;
+  /* font-family: Montserrat-Regular, sans-serif; */
+  /* font-size: 16px; */
+  font-size: 1.1vw;
+  line-height: 1.5;
+  font-weight: normal;
+}
+.card h4,
+.card small,
+.ficher h4,
+.ficher small {
+  color: white;
+  z-index: 20;
+  transition: color .2s;
+}
+@media (min-width: 768px) {
+  @media (hover: hover) {
+    .card:hover h4,
+    .card:hover small {
+      color: #ffa300;
+      z-index: 20;
+    }
+  }
+}
+.card .contents {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.card .row {
+  padding: 0 1.1vw;
+}
+.card .row.place,
+.ficher .row.place {
+  position: absolute;
+  bottom: 2.2vw;
+}
+.card .address-icon,
+.card .address-icon.hover,
+.ficher .address-icon {
+  position: absolute;
+  top: 0.26vw;
+  /* left: 2.2vw; */
+  z-index: 20;
+  /* transition: opacity .2s; */
+}
+.ficher .address-icon {
+  left: 2.2vw;
+}
+.card .address-icon,
+.ficher .address-icon {
+  /* width: 10px; */
+  width: .68vw;
+  height: auto;
+  /* margin: 4px 15px 0 31px; */
+  /* margin: 0.26vw 1.1vw 0 2.2vw; */
+  opacity: 1;
+}
+.card .address-icon.hover {
+  width: .68vw;
+  height: auto;
+  /* margin: 0.26vw 1.1vw 0 2.2vw; */
+  /* left: calc((.68vw + 1.1vw) * -2 - .4vw); */
+  opacity: 0;
+  transition: opacity .2s;
+  z-index: 40;
+}
+.card .icon-container,
+.ficher .icon-container {
+  float: left;
+  position: relative;
+  /* width: calc(.68vw + 1.1vw + 2.2vw); */
+  width: calc(.68vw + 1.1vw);
+  min-height: 20px;
+}
+.ficher .icon-container {
+  width: calc(.68vw + 1.1vw + 2.2vw);
+}
+@media (min-width: 768px) {
+  .card:hover .address-icon.hover {
+    opacity: 1;
+  }
+}
+.card img.logo {
+  width: calc(100% - 32px);
+  height: 60%;
+  position: absolute;
+  z-index: 20;
+  top: calc(-25% + 32px);
+  left: calc(-12% + 16px);
+}
+.card img.logo.hover {
+  opacity: 0;
+}
+.card .logo-rep {
+  width: 100%;
+  padding-top: 20%;
+  /* height: 50%; */
+  position: relative;
+  content: '';
+}
+.upper img.logo {
+  width: 70%;
+  height: 60%;
+  height: auto;
+  /* position: absolute; */
+  position: relative;
+  z-index: 20;
+  /* top: 30%; */
+  /* left: 16px; */
+}
+@media (max-width: 768px) {
+  .upper img.logo {
+    width: calc(100% - 16px);
+    left: 8px;
+    top: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .card:hover img.logo {
+    opacity: 0;
+  }
+  .card:hover img.logo.hover {
+    opacity: 1;
+  }
+}
+
+.ficher {
+  background-color: white;
+  width: 100%;
+}
+.ficher h4,
+.ficher small,
+.ficher .row {
+  color: #1A171B;
+  padding: 0 !important;
+}
+.ficher h4 {
+  padding-right: 16px;
+}
+.ficher .containerr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* width: calc((100% - 2.570481%) / 2 - 2.570481%); */
+  width: 33%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .card,
+  .ficher .image-container {
+    position: relative;
+    width: calc(100% - 5%);
+    width: 100%;
+    height: calc(95vw * 0.63157895);
+    margin: auto;
+    margin-bottom: 2.5vw;
+  }
+  .ficher .image-container {
+    /* width: 87.5%; */
+    width: 100%;
+    /* position: absolute; */
+    top: 2.5vw;
+    right: 0;
+  }
+  .ficher .containerr {
+    width: 100%;
+    padding: 0 2.5%;
+  }
+  .ficher .image-container img.background {
+    width: 100%;
+    display: table;
+    float: left;
+  }
+  .card h4,
+  .ficher h4 {
+    display: block;
+    font-size: calc(10px + 3.5vw);
+    width: 95%;
+    padding: 0 5%;
+    margin-top: 7%;
+    padding: 0 2.5%;
+  }
+  .card small,
+  .ficher small {
+    font-size:  calc(10.4px + 0.975vw);
+    width: 100%;
+    line-height: 1.54;
+  }
+  .card .address-icon,
+  .ficher .address-icon {
+    position: relative;
+    width: calc(6.4px + 0.975vw);
+    /* margin: calc((10.4px + 0.975vw) * .54) 15px 0 7px; */
+    margin: calc((10.4px + 0.975vw) * .54) 3vw 0 1vw;
+    left: 0;
+  }
+  .card .row,
+  .ficher .row {
+    bottom: 7%;
+    padding: 0 2.5%;
+  }
+  .card .row .row,
+  .ficher .row .row {
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 0;
+    bottom: 0;
+  }
+  .card.special .down {
+    border-top: 3px dotted #1A171B;
+  }
+  .card.special .down h5 {
+    font-size: calc(8px + 1.5vw);
+  }
+  .card.special .down .buy {
+    width: 300%;
+    margin-left: -100%;
+  }
+}

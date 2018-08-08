@@ -1,0 +1,367 @@
+.cards-container {
+  max-width: calc(1366px - 160px);
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+.cards-container a {
+  text-decoration: none;
+}
+
+.card,
+.ficher {
+  width: calc((100% - 2.570481%) / 2);
+  margin-bottom: calc((100vw - 160px) * 0.02570481 * 0.9);
+  float: left;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.card {
+  padding-top: calc(50% * 0.59965928);
+}
+.ficher {
+  width: 100%;
+  padding-top: calc(100% * 0.298755);
+  position: relative;
+}
+.ficher .contents {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ficher .card {
+  width: 65.477%;
+  margin: 0;
+}
+.ficher .text {
+  position: relative;
+  width: 34%;
+  height: 100%;
+  padding: 2.34vw 1.17vw;
+}
+.ficher h1,
+.ficher span {
+  color:
+}
+
+.card .contents {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 2.3vw 1.15vw;
+}
+.frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card h1,
+.ficher h1 {
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-size: 2.3vw;
+  line-height: 1.25;
+  margin-bottom: 1.15vw;
+}
+.card span,
+.ficher span {
+  font-family: NotoSans-Regular, sans-serif;
+  font-size: 1vw;
+  line-height: 1.71;
+  margin-bottom: 1.15vw;
+}
+/* @media (max-width: 1200px) {
+  .card h1,
+  .ficher h1 {
+    font-size: 25px;
+    font-size: 2.3vw;
+  }
+  .card span,
+  .ficher span {
+    font-size: 12px;
+    font-size: 1.3vw;
+    line-height: 1.1;
+  }
+} */
+
+.ficher span {
+  font-size: 1.171vw;
+  line-height: 1.5;
+}
+.card h1,
+.card span {
+  position: relative;
+  color: white;
+  z-index: 20;
+  transition: color .2s;
+}
+.card.abonement h1 {
+  color: #ffa300;
+  width: 60%;
+}
+.card img.logo {
+  width: 80%;
+  z-index: 20;
+  position: absolute;
+}
+.card img.logo.hover {
+  opacity: 0;
+  transition: opacity .2s;
+}
+.logo-rep {
+  width: 100%;
+  height: 5.5vw;
+  position: relative;
+}
+
+.card.shadowed::after {
+  background-color: #1A171B;
+  width: 100%;
+  height: 100%;
+  content: ' ';
+  top: 0;
+  left: 0;
+  opacity: .5;
+  position: absolute;
+  z-index: 10;
+  transition: opacity .2s;
+}
+
+@media (min-width: 1366px) {
+  .card h1,
+  .ficher h1 {
+    font-size: 32px;
+  }
+  .card span {
+    font-size: 14px;
+  }
+  .ficher span {
+    font-size: 16px;
+  }
+  .card .contents {
+    padding: 32px 16px;
+  }
+}
+@media (hover: hover) {
+  .card:hover h1,
+  .card:hover span {
+    color: #ffa300;
+  }
+  .card:hover.shadowed::after {
+    opacity: .8;
+  }
+  .card.abonement:hover h1 {
+    color: #1a171b;
+  }
+  .card:hover img.logo.hover {
+    opacity: 1;
+  }
+  .card:hover .icon-container .address-icon.hover {
+    opacity: 1;
+  }
+}
+
+.card-mobile,
+.ficher-mobile {
+  display: table;
+  margin-bottom: 10vw !important;
+}
+.card-mobile {
+  width: 90%;
+  margin: 0 5% 10vw;
+}
+.ficher-mobile {
+  width: 100%;
+}
+.card-mobile {
+  box-shadow: 0 2px 4px 0 rgba(150, 148, 143, 0.3);
+}
+.card-mobile .card,
+.ficher-mobile .card {
+  position: relative;
+  width: 100%;
+  padding-top: calc(100% * .666667);
+  margin-bottom: 0;
+}
+.card-mobile .text {
+  display: table;
+  position: relative;
+  padding: 5vw;
+}
+.ficher-mobile .text {
+  display: table;
+  position: relative;
+  padding: 5vw 2.5vw;
+}
+.card-mobile h1,
+.ficher-mobile h1 {
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-size: 7.5vw;
+  margin-bottom: 5vw;
+}
+.card-mobile span {
+  font-family: NotoSans-Regular, sans-serif;
+  font-size: 4vw;
+  line-height: 1.54;
+}
+.ficher-mobile span {
+  font-family: NotoSans-Regular, sans-serif;
+  font-size: 4.375vw;
+  line-height: 1.43;
+}
+.card-mobile .contents {
+  padding: 5vw;
+}
+.card-mobile {
+  width: 90%;
+  float: none;
+  margin: auto;
+  display: table;
+}
+.card-mobile .new-desc {
+  display: block;
+  margin-bottom: 7.5vw;
+}
+
+.schedule-container .card.abonement .contents {
+  padding: 1.17vw;
+}
+@media (max-width: 768px) {
+  .card.abonement {
+    width: 95%;
+    float: none !important;
+    margin: auto;
+    padding-top: calc(95% * 0.63158);
+    margin-bottom: 10vw;
+  }
+  .card.abonement .contents {
+    padding: 5vw !important;
+  }
+  .cards-container .card.abonement h1 {
+    font-size: 6.25vw;
+  }
+  .schedule-container .card.abonement h1 {
+    font-size: 20px;
+  }
+  .schedule-container .card.abonement {
+    margin-bottom: 87px !important;
+  }
+  .card.abonement h1 {
+    color: #1a171b;
+  }
+}
+
+
+.card.abonement {
+  background-color: white;
+  transition: background-color .2s;
+}
+.schedule-container .card.abonement {
+  width: 100%;
+  padding-top: 187px;
+  height: 187px;
+  margin-bottom: 157px;
+}
+.cards-container .card.abonement button {
+  width: 35%;
+}
+.schedule-container .card.abonement button {
+  width: 25%;
+  max-width: 190px;
+  min-width: 140px;
+}
+.card.abonement button {
+  min-width: 140px;
+  height: 39px;
+  background: #ffa300;
+  color: #1a171b;
+  font-family: Montserrat-ExtraBold, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color .4s, color .4s;
+}
+@media (hover: hover) {
+  .abonement:hover button {
+    background: black;
+    color: white;
+  }
+  .abonement:hover {
+    background-color: #ffa300;
+  }
+  .abonement:hover img.background.hover {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .abonement button {
+    background: black !important;
+    color: white !important;
+  }
+  .cards-container .abonement,
+  .schedule-container .abonement {
+    background-color: #ffa300 !important;
+  }
+  .abonement img.background.hover {
+    opacity: 1 !important;
+  }
+}
+
+.abonement img.background.hover {
+  transition: opacity .6s;
+}
+.abonement img.background.hover {
+  opacity: 0;
+}
+
+.schedule-container .abonement img.background {
+  width: 60%;
+  right: 0;
+  left: auto;
+}
+@media (max-width: 550px) {
+  .schedule-container .abonement img.background {
+    width: 100%;
+  }
+}
+
+.card .place-desc {
+  margin: 0 2vw 0 0;
+}
+.card .icon-container,
+.ficher .icon-container {
+  position: relative;
+  height: 1.5vw;
+  width: 1.5vw;
+  margin-right: 0.375vw;
+  float: left;
+  content: '';
+  padding: 0.25vw 0.4265vw;
+}
+.card-mobile .icon-container,
+.ficher-mobile .icon-container {
+  position: relative;
+  height: 6.25vw;
+  width: 6.25vw;
+  margin-right: 2.5vw;
+  float: left;
+  content: '';
+  padding: 1.0625vw 1.8125vw;
+}
+.icon-container .address-icon {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  z-index: 20;
+}
+.card .icon-container .address-icon.hover {
+  opacity: 0;
+  transition: opacity .2s;
+  z-index: 21;
+}
