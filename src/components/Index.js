@@ -36,13 +36,13 @@ class Index extends Component {
     var spekts = this.props.spekts.map((spekt, index) =>
       <Link to={"spekt/" + spekt.id} onClick={() => this.setPage()}>
         <div className={"card " + ((index + (index > abonementPos ? 1 : 0)) % 2 ? "right" : "left")} onClick={() => this.setPage("spekt", spekt.id)}>
-          <img src={"/img/spekts/" + spekt.id + ".jpg"} className="background" />
+          <img alt="" src={"/img/spekts/" + spekt.id + ".jpg"} className="background" />
           <div className="contents">
             {
               spekt.logo ?
                 <div>
-                  <img src={this.lang(spekt.logo)} className="logo"/>
-                  <img src={this.lang(spekt.logoHover)} className="logo hover"/>
+                  <img alt="" src={this.lang(spekt.logo)} className="logo"/>
+                  <img alt="" src={this.lang(spekt.logoHover)} className="logo hover"/>
                   <div className="logo-rep"></div>
                 </div>
               :
@@ -54,8 +54,8 @@ class Index extends Component {
             <div className="row desktop place">
               <small className="left">{this.lang(spekt.placeDesc)}</small>
               <div className="icon-container">
-                <img src={addressIconYellow} className="address-icon hover" />
-                <img src={addressIconWhite} className="address-icon" />
+                <img alt="" src={addressIconYellow} className="address-icon hover" />
+                <img alt="" src={addressIconWhite} className="address-icon" />
               </div>
               <small className="address left">{this.lang(spekt.address)}</small>
             </div>
@@ -64,7 +64,7 @@ class Index extends Component {
                 <small>{this.lang(spekt.placeDesc)}</small>
               </div>
               <div className="row">
-                <img src={addressIconWhite} className="address-icon" />
+                <img alt="" src={addressIconWhite} className="address-icon" />
                 <small className="address">{this.lang(spekt.address)}</small>
               </div>
             </div>
@@ -74,8 +74,8 @@ class Index extends Component {
     );
     var abonement = <Link to="abonement" onClick={() => this.setPage("abonement")}>
         <div className="card abonement right">
-          <img src={"img/abonements/" + (this.state.abonementPic ? "1.png" : "2.png")} className="background" />
-          <img src={"img/abonements/" + (this.state.abonementPic ? "1_hover.png" : "2_hover.png")} className="background hover" />
+          <img alt="" src={"img/abonements/" + (this.state.abonementPic ? "1.png" : "2.png")} className="background" />
+          <img alt="" src={"img/abonements/" + (this.state.abonementPic ? "1_hover.png" : "2_hover.png")} className="background hover" />
           <div className="contents">
             <h4>{this.props.lang ? "«The Access Point» Subscriptions" : "Абонементы «Точки доступа»"}</h4>
             <div className="row place">
@@ -95,13 +95,13 @@ class Index extends Component {
     ].map(ficher =>
       <div className="table">
         <div className="ficher desktop">
-          {/* <img src={"/img/fichers/" + ficher.id + ".jpg"} className="background" /> */}
-          <img src="img/fichers/0.jpg" className="background" />
+          {/* <img alt="" src={"/img/fichers/" + ficher.id + ".jpg"} className="background" /> */}
+          <img alt="" src="img/fichers/0.jpg" className="background" />
           <div className="containerr">
             <h4>{capitalize(this.lang(ficher.name))}</h4>
             <div className="row place">
               <small>{capitalize(this.lang(ficher.place))}</small>
-              <img src={addressIconBlack} className="address-icon" />
+              <img alt="" src={addressIconBlack} className="address-icon" />
               <small className="address">{this.lang(ficher.address)}</small>
             </div>
           </div>
@@ -109,7 +109,7 @@ class Index extends Component {
 
         <div className="ficher mobile">
           <div className="ficher">
-            <img src="img/fichers/0.jpg" className="background" />
+            <img alt="" src="img/fichers/0.jpg" className="background" />
           </div>
           <h4>{capitalize(this.lang(ficher.name))}</h4>
           <div className="row">
@@ -117,7 +117,7 @@ class Index extends Component {
               <small>{capitalize(this.lang(ficher.place))}</small>
             </div>
             <div className="row">
-              <img src={addressIconBlack} className="address-icon" />
+              <img alt="" src={addressIconBlack} className="address-icon" />
               <small className="address">{this.lang(ficher.address)}</small>
             </div>
           </div>
@@ -143,9 +143,9 @@ class Index extends Component {
     };
     var landscape = W > H && W <= 768;
 
-    if (this.state.code == "рейв")
+    if (this.state.code === "рейв")
       recursiveTimeOut(this.easterEgg.bind(this), 555, 100500);
-    if (this.state.code == "ййййй")
+    if (this.state.code === "ййййй")
       recursiveTimeOut(this.easterEggRomanova.bind(this), 555, 100500);
 
 

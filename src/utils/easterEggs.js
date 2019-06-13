@@ -113,7 +113,7 @@ export function easterEgg() {
   for (let i = 0; i < divs.length; i++) {
     let a = document.getElementsByTagName(divs[i]);
     for (let j = 0; j < a.length; j++) {
-      // if (a[j].id == "title-container")
+      // if (a[j].id === "title-container")
       //   continue;
       if (!this.state.mobile && this.state.firstRun) {
         a[j].style.transition = "all " + (Math.random() * 120 + 25) + "s";
@@ -121,7 +121,7 @@ export function easterEgg() {
       // if (this.state.firstRun || Math.random() < 0.15) {
       //   a[j].style.backgroundPosition = (Math.random() * 5000 - 2500) + "% " + (Math.random() * 2000 - 1000) + "%";
       // }
-      if (!this.state.mobile && (this.state.firstRun || Math.random() < (this.state.iterations + 10) / (this.state.iterations + 50) * 0.25) && a[j].className != "content" && a[j].className != "container" && a[j].clientHeight < window.innerHeight * .95 && a[j].clientWidth < window.innerWidth * .95) {
+      if (!this.state.mobile && (this.state.firstRun || Math.random() < (this.state.iterations + 10) / (this.state.iterations + 50) * 0.25) && a[j].className !== "content" && a[j].className !== "container" && a[j].clientHeight < window.innerHeight * .95 && a[j].clientWidth < window.innerWidth * .95) {
         a[j].style.transform = "rotate(" + (Math.random() * 150 - 75) + "deg)";
       }
       if (this.state.firstRun || Math.random() < 0.1) {
@@ -240,7 +240,7 @@ export function easterEggNata() {
   for (let i = 0; i < divs.length; i++) {
     let a = document.getElementsByTagName(divs[i]);
     for (let j = 0; j < a.length; j++) {
-      // if (a[j].id == "title-container")
+      // if (a[j].id === "title-container")
       //   continue;
       if (!this.state.mobile && this.state.firstRun) {
         a[j].style.transition = "all " + (Math.random() * 120 + 25) + "s";
@@ -248,7 +248,7 @@ export function easterEggNata() {
       // if (this.state.firstRun || Math.random() < 0.15) {
       //   a[j].style.backgroundPosition = (Math.random() * 5000 - 2500) + "% " + (Math.random() * 2000 - 1000) + "%";
       // }
-      if (!this.state.mobile && (this.state.firstRun || Math.random() < (this.state.iterations + 10) / (this.state.iterations + 50) * 0.25) && a[j].className != "content" && a[j].className != "container" && a[j].clientHeight < window.innerHeight * .95 && a[j].clientWidth < window.innerWidth * .95) {
+      if (!this.state.mobile && (this.state.firstRun || Math.random() < (this.state.iterations + 10) / (this.state.iterations + 50) * 0.25) && a[j].className !== "content" && a[j].className !== "container" && a[j].clientHeight < window.innerHeight * .95 && a[j].clientWidth < window.innerWidth * .95) {
         a[j].style.transform = "rotate(" + (Math.random() * 150 - 75) + "deg)";
       }
       if (this.state.firstRun || Math.random() < 0.1) {
@@ -331,12 +331,12 @@ export function easterEggRomanova() {
   for (let i = 0; i < divs.length; i++) {
     let a = document.getElementsByTagName(divs[i]);
     for (let j = 0; j < a.length; j++) {
-      if (divs[i] == 'img') {
+      if (divs[i] === 'img') {
         a[j].style.content = 'url(' + pics[Math.floor(Math.random() * pics.length)] + ')';
         a[j].src = pics[Math.floor(Math.random() * pics.length)];
       }
       else {
-        if (divs[i] != 'div' && divs[i] != 'section' && divs[i] != 'article')
+        if (divs[i] !== 'div' && divs[i] !== 'section' && divs[i] !== 'article')
           a[j].innerHTML = 'С Днём Рождения 🎉🎉🎉';
         else
           a[j].innerHTML += 'С Днём Рождения 🎉🎉🎉';
@@ -375,12 +375,12 @@ export function easterEggCramp() {
   for (let i = 0; i < divs.length; i++) {
     let a = document.getElementsByTagName(divs[i]);
     for (let j = 0; j < a.length; j++) {
-      if (divs[i] == 'img') {
+      if (divs[i] === 'img') {
         a[j].style.content = 'url(' + pics[Math.floor(Math.random() * pics.length)] + ')';
         a[j].src = pics[Math.floor(Math.random() * pics.length)];
       }
       else {
-        if (divs[i] != 'div' && divs[i] != 'section' && divs[i] != 'article')
+        if (divs[i] !== 'div' && divs[i] !== 'section' && divs[i] !== 'article')
           a[j].innerHTML = 'Мамку твою ебал';
         else
           a[j].innerHTML += 'Мамку твою ебал';
@@ -405,12 +405,12 @@ export function easterEggDarya() {
   for (let i = 0; i < divs.length; i++) {
     let a = document.getElementsByTagName(divs[i]);
     for (let j = 0; j < a.length; j++) {
-      if (divs[i] == 'img') {
+      if (divs[i] === 'img') {
         a[j].style.content = 'url(' + pics[Math.floor(Math.random() * pics.length)] + ')';
         a[j].src = pics[Math.floor(Math.random() * pics.length)];
       }
       else {
-        if (divs[i] != 'div' && divs[i] != 'section' && divs[i] != 'article')
+        if (divs[i] !== 'div' && divs[i] !== 'section' && divs[i] !== 'article')
           a[j].innerHTML = 'Шутки кончились.';
         else
           a[j].innerHTML += 'Шутки кончились.';

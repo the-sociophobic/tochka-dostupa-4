@@ -18,7 +18,7 @@ class Ficher extends Component {
         <Link to={"ficher/" + ficher.id} onClick={() => window.scrollTo(0, 0)}>
           <div className="ficher-mobile">
             <div className="card">
-              <img src={"img/fichers/" + ficher.img} className="background" />
+              <img alt="" src={"img/fichers/" + ficher.img} className="background" />
             </div>
             <div className="text">
               <h1>{this.props.lang(ficher.name)}</h1>
@@ -30,7 +30,7 @@ class Ficher extends Component {
                   </div>
                   <div className="icon-container">
                     <div className="frame">
-                      <img src={addressIconBlack} className="address-icon" />
+                      <img alt="" src={addressIconBlack} className="address-icon" />
                     </div>
                   </div>
                   <span>{this.props.lang(ficher.address)}</span>
@@ -46,7 +46,7 @@ class Ficher extends Component {
         <div className="ficher">
           <div className="contents">
             <div className="card left">
-              <img src={"img/fichers/" + ficher.img} className="background" />
+              <img alt="" src={"img/fichers/" + ficher.img} className="background" />
             </div>
             <div className="text left">
               <div className="frame">
@@ -58,7 +58,7 @@ class Ficher extends Component {
                     <div className="left">
                       <div className="icon-container">
                         <div className="frame">
-                          <img src={addressIconBlack} className="address-icon" />
+                          <img alt="" src={addressIconBlack} className="address-icon" />
                         </div>
                       </div>
                       <span>{this.props.lang(ficher.address)}</span>

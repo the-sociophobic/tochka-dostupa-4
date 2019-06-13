@@ -7,16 +7,16 @@ export default class myDate {
         this.dateJS = new Date();
         break;
       case "string":
-        if (string.length == 0) {
+        if (string.length === 0) {
           this.dateJS = new Date();
           break;
         }
 
         let newString;
 
-        if (string[2] == '.' || string[2] == '/' || string[2] == '-')
+        if (string[2] === '.' || string[2] === '/' || string[2] === '-')
           newString = string.substring(3, 5) + '/' + string.substring(0, 2) + '/' + string.substring(6, 10);
-        else if (string[2] == ':' && (string[8] == '.' || string[8] == '/' || string[8] == '-'))
+        else if (string[2] === ':' && (string[8] === '.' || string[8] === '/' || string[8] === '-'))
           newString = string.substring(0, 6) + string.substring(9, 11) + '/' + string.substring(6, 8) + '/' + string.substring(12, 16);
         else
           newString = string;
@@ -64,7 +64,7 @@ export default class myDate {
   }
   sameDay(date) {
     var newDate = new myDate(date);
-    return this.day() == newDate.day() && this.month() == newDate.month() && this.year() == newDate.year();
+    return this.day() === newDate.day() && this.month() === newDate.month() && this.year() === newDate.year();
   }
 
   addDay(offset) {
@@ -167,7 +167,7 @@ export default class myDate {
       }
 
     var today = new myDate();
-    if (today.year() == this.year())
+    if (today.year() === this.year())
       return capitalize(this.date());
     return this.day() + " " + capitalize(this.monthStringShort()) + " " + this.year();
   }
@@ -180,19 +180,19 @@ export default class myDate {
 
   isToday() {
     var today = new myDate();
-    if (today.day() == this.day() && today.month() == this.month() && today.year() == this.year())
+    if (today.day() === this.day() && today.month() === this.month() && today.year() === this.year())
       return true;
     return false;
   }
   isYesterday() {
     var today = new myDate();
-    if (today.day() - 1 == this.day() && today.month() == this.month() && today.year() == this.year())
+    if (today.day() - 1 === this.day() && today.month() === this.month() && today.year() === this.year())
       return true;
     return false;
   }
   isTomorrow() {
     var today = new myDate();
-    if (today.day() + 1 == this.day() && today.month() == this.month() && today.year() == this.year())
+    if (today.day() + 1 === this.day() && today.month() === this.month() && today.year() === this.year())
       return true;
     return false;
   }
@@ -231,7 +231,7 @@ export default class myDate {
   }
 
   countable(number, word) {
-    if(number == 1)
+    if(number === 1)
       return number + " " + word;
     return number + " " + word + "s";
   }

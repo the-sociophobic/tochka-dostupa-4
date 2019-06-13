@@ -29,22 +29,24 @@ class Partners extends Component {
           case "string":
             return <div className="block"><span className={block.includes("vasion") || block.includes("торжения") ? "small-margin" : ""}>{block}</span></div>;
           case "number":
-            var partner = partners.find(partner => partner.id == block);
+            var partner = partners.find(partner => partner.id === block);
             return <div className="block">
-              <a href={partner.link} target="_blank">
-                <img src={path + "img/partners/" + (window.devicePixelRatio > 1 ? "1x/" : "1x/") + partner.img} />
+              <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                <img alt="" src={path + "img/partners/" + (window.devicePixelRatio > 1 ? "1x/" : "1x/") + partner.img} />
               </a>
             </div>;
+          default:
+            return ""
         }
       });
       linedBlocks = [];
       mappedBlocks.forEach((block, index) => {
-        if (index % lineLength == 0)
+        if (index % lineLength === 0)
           linedBlocks.push([block]);
         else
           linedBlocks[linedBlocks.length - 1].push(block);
-        if (index % lineLength == lineLength - 1)
-          linedBlocks[linedBlocks.length - 1] = <div className={"partners-row " + (mappedBlocks.length == index + 1 ? "no-border" : "")}>
+        if (index % lineLength === lineLength - 1)
+          linedBlocks[linedBlocks.length - 1] = <div className={"partners-row " + (mappedBlocks.length === index + 1 ? "no-border" : "")}>
             <div className="row-content">
               {linedBlocks[linedBlocks.length - 1]}
             </div>
@@ -58,10 +60,10 @@ class Partners extends Component {
           case "string":
             return <div className="block"><span className={block.includes("vasion") || block.includes("торжения") ? "small-margin" : ""}>{block}</span></div>;
           case "number":
-            var partner = partners.find(partner => partner.id == block);
+            var partner = partners.find(partner => partner.id === block);
             return <div className="block">
-              <a href={partner.link} target="_blank">
-                <img src={path + "img/partners/1x/" + partner.img} />
+              <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                <img alt="" src={path + "img/partners/1x/" + partner.img} />
               </a>
             </div>;
         }

@@ -41,7 +41,7 @@ class Map extends Component {
           const locations = this.props.locations;
           if (locations) {
             let myMap;
-            if (locations.length == 2)
+            if (locations.length === 2)
               myMap = new yandex.Map("map",
               {
                 center: [59.999352, 29.731338],

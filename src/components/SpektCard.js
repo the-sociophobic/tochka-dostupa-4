@@ -21,13 +21,13 @@ class SpektCard extends Component {
         <Link to={"spekt/" + spekt.id} onClick={() => window.scrollTo(0, 0)}>
           <div className={"card-mobile " + (this.props.mobile ? "" : this.props.align)}>
             <div className="card shadowed">
-              <img src={"/img/spekts/" + spekt.id + ".jpg"} className="background" />
+              <img alt="" src={"/img/spekts/" + spekt.id + ".jpg"} className="background" />
               <div className="contents">
                 {
                   spekt.logo ?
                     <div>
-                      <img src={this.props.lang(spekt.logo)} className="logo"/>
-                      <img src={this.props.lang(spekt.logoHover)} className="logo hover"/>
+                      <img alt="" src={this.props.lang(spekt.logo)} className="logo"/>
+                      <img alt="" src={this.props.lang(spekt.logoHover)} className="logo hover"/>
                       <div className="logo-rep"></div>
                     </div>
                   :
@@ -40,14 +40,14 @@ class SpektCard extends Component {
                 {this.props.lang(spekt.newText)}
               </span>
               {
-                spekt.address[0] != "" ?
+                spekt.address[0] !== "" ?
                 <div>
                   <div className="row">
                     <span>{this.props.lang(spekt.placeDesc)}</span>
                   </div>
                   <div className="icon-container">
                     <div className="frame">
-                      <img src={addressIconBlack} className="address-icon" />
+                      <img alt="" src={addressIconBlack} className="address-icon" />
                     </div>
                   </div>
                   <span>{this.props.lang(spekt.address)}</span>
@@ -61,13 +61,13 @@ class SpektCard extends Component {
     return (
       <Link to={"spekt/" + spekt.id} onClick={() => window.scrollTo(0, 0)}>
         <div className={"card shadowed " + this.props.align}>
-          <img src={"/img/spekts/" + spekt.id + ".jpg"} className="background" />
+          <img alt="" src={"/img/spekts/" + spekt.id + ".jpg"} className="background" />
           <div className="contents">
             {
               spekt.logo ?
                 <div>
-                  <img src={this.props.lang(spekt.logo)} className="logo"/>
-                  <img src={this.props.lang(spekt.logoHover)} className="logo hover"/>
+                  <img alt="" src={this.props.lang(spekt.logo)} className="logo"/>
+                  <img alt="" src={this.props.lang(spekt.logoHover)} className="logo hover"/>
                   <div className="logo-rep"></div>
                 </div>
               :
@@ -78,14 +78,14 @@ class SpektCard extends Component {
               {/* {this.props.width > 900 ? this.props.lang(spekt.newText) : ""} */}
             </span>
             {
-              spekt.address[0] != "" ?
+              spekt.address[0] !== "" ?
               <div className="row bottom">
                 <span className="left place-desc">{this.props.lang(spekt.placeDesc)}</span>
                 <div className="left">
                   <div className="icon-container">
                     <div className="frame">
-                      <img src={addressIconYellow} className="address-icon hover" />
-                      <img src={addressIconWhite} className="address-icon" />
+                      <img alt="" src={addressIconYellow} className="address-icon hover" />
+                      <img alt="" src={addressIconWhite} className="address-icon" />
                     </div>
                   </div>
                   <span className="left">
