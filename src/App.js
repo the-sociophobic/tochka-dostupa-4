@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  NavLink
+} from 'react-router-dom';
 
 import data from './helpers/data'
 
@@ -204,13 +210,17 @@ class App extends Component {
   }
 
   render() {
-    var currentPage = window.location.href;
-    currentPage = currentPage.slice(currentPage.lastIndexOf("/") + 1);
     var headerLinks = this.state.headerLinks
     .map(link =>
-      <Link to={"/" + link.address} onClick={() => this.setPage()}>
-        <li className={currentPage === link.address ? "active" : ""} onClick={() => this.setPage(link.address)}>{capitalize(this.lang(link.label))}</li>
-      </Link>
+      <NavLink
+        to={"/" + link.address}
+        onClick={() => this.setPage()}
+        activeClassName='active'
+      >
+        <li onClick={() => this.setPage(link.address)}>
+          {capitalize(this.lang(link.label))}
+        </li>
+      </NavLink>
     );
     var headerLinksMobile = this.state.headerLinks
     .map(link =>
@@ -312,4 +322,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

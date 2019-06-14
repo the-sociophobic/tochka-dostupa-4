@@ -247,7 +247,7 @@ header ul li {
 }
 @media (min-width: 768px) {
   header ul li:hover,
-  header ul li.active {
+  header ul .active li {
     background: #ffa300;
   }
 }
