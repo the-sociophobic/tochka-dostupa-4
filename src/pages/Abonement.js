@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 export default function() {
   document.title = this.state.lang ? "The Access Point: Subscription" : "Точка доступа: Абонемент";
 
-  var spekts = [5, 4, 3, 2, 1, /* abonement 2 */ 5, 4, 3, 2, 1, 9, 7, 6].map(id => {
+  var spekts = [5, 4, 3, 2, 1, /* abonement 2 */ 5, 4, 3, 2, 1, 9, 7, 6]
+  .map((id, index) => {
     var spekt = this.state.spekts.find(spekt => spekt.id === id);
-    return <div className="row">
+    return <div className="row" key={index}>
         <Link to={"spekt/" + spekt.id} onClick={() => this.setPage("spekt", spekt.id)}>{this.lang(spekt.name)}</Link>
         {(id === 0 ? (<p>{this.state.lang ? "all 4 evenings" : "все 4 вечера"}</p>) : "")}
       </div>;

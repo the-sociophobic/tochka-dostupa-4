@@ -108,7 +108,11 @@ class Map extends Component {
     var locationsMapped;
     if (locations) {
       locations = locations.map(location =>
-        <button className="yellow-link special" onClick={() => this.setCenter(this.lang(location.place))}>
+        <button
+          className="yellow-link special"
+          onClick={() => this.setCenter(this.lang(location.place))}
+          key={location.label}
+        >
           {location.label ? this.lang(location.label) : this.lang(location.name)}
         </button>
       );

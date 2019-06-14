@@ -18,7 +18,11 @@ export default function() {
   var W = this.state.width;
   var H = this.state.height;
   var textStyle = {
-    fontSize: (H / W > 0.7 ? W / 11 : (Math.pow(W * H, 0.452) * (W / H > 20 / 9 ? 0.21 : 0.22))) * (this.state.lang ? 1.1 : 1) + "px"
+    fontSize: (
+      H / W > 0.7 ?
+        W / 11
+        :
+        (Math.pow(W * H, 0.452) * (W / H > 20 / 9 ? 0.21 : 0.22))) * (this.state.lang ? 1.1 : .99) + "px"
   };
   var textStyleMobile = {
     fontSize: (H / W > 1.2 ? W / 11 : (Math.pow(W * H, 0.459) * (W / H > 20 / 9 ? (W < 340 || H < 340 ? 0.12 : 0.14) : (W < 340 || H < 340 ? 0.138 : 0.153)))) * (this.state.lang ? 1.1 : 1) + "px"

@@ -26,7 +26,7 @@ export function newLines(string) {
     }
   paragraphs.push(string.slice(prevI));
 
-  return <div>{paragraphs.map(paragraph => <span>{paragraph}</span>)}</div>;
+  return <div>{paragraphs.map((paragraph, index) => <span key={index}>{paragraph}</span>)}</div>;
 }
 
 export default capitalize;

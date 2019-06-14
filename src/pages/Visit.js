@@ -274,7 +274,7 @@ export default function() {
     },
   ];
   var articles = array.map(article =>
-    <article id={article.id}>
+    <article id={article.id} key={article.id}>
       <h3>{capitalize(article.title)}</h3>
       {article.text}
     </article>
@@ -299,6 +299,7 @@ export default function() {
 
   var links = array.map((article, index) =>
     <button
+      key={index}
       className={currentArticle === index ? "active" : ""}
       onClick={() => {
         var scrollOffset = this.state.mobile ? 0 : (-document.getElementById("visit-navigation").clientHeight - 80);
@@ -333,7 +334,10 @@ export default function() {
       </div>
     </div>;
   if (window.innerWidth < 414)
-    navigationLinks = links.map(link => <div className="column center">{link}</div>);
+    navigationLinks = links.map(link =>
+      <div className="column center" key={link}>
+        {link}
+      </div>)
 
   return (
     <div className="visit">

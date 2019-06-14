@@ -4,7 +4,7 @@ export default function() {
   document.title = this.state.lang ? "The Access Point: Festival" : "Точка Доступа: Фестиваль";
 
   var workersMapped = this.state.workers.map(worker =>
-    <div className="worker">
+    <div className="worker" key={worker.title}>
       <div className="name">{this.lang(worker.name)}</div>
       <div className="title">{this.lang(worker.title)}</div>
     </div>

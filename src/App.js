@@ -210,12 +210,16 @@ class App extends Component {
   }
 
   render() {
+    if (typeof window === "undefined")
+      return ""
+
     var headerLinks = this.state.headerLinks
     .map(link =>
       <NavLink
         to={"/" + link.address}
         onClick={() => this.setPage()}
         activeClassName='active'
+        key={"navlink-" + link.address}
       >
         <li onClick={() => this.setPage(link.address)}>
           {capitalize(this.lang(link.label))}
@@ -224,7 +228,11 @@ class App extends Component {
     );
     var headerLinksMobile = this.state.headerLinks
     .map(link =>
-      <Link to={"/" + link.address} onClick={() => this.setPage()}>
+      <Link
+        to={"/" + link.address}
+        onClick={() => this.setPage()}
+        key={link.address}
+      >
         <button onClick={() => this.setPage(link.address)}>{capitalize(this.lang(link.label))}</button>
       </Link>
     );

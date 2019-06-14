@@ -34,7 +34,11 @@ class Index extends Component {
 
     var abonementPos = 4;
     var spekts = this.props.spekts.map((spekt, index) =>
-      <Link to={"spekt/" + spekt.id} onClick={() => this.setPage()}>
+      <Link
+        to={"spekt/" + spekt.id}
+        onClick={() => this.setPage()}
+        key={spekt.id}
+      >
         <div className={"card " + ((index + (index > abonementPos ? 1 : 0)) % 2 ? "right" : "left")} onClick={() => this.setPage("spekt", spekt.id)}>
           <img alt="" src={"/img/spekts/" + spekt.id + ".jpg"} className="background" />
           <div className="contents">
@@ -93,7 +97,7 @@ class Index extends Component {
         img: "https://scontent-arn2-1.cdninstagram.com/vp/414f67ca730bc89a0c203ea1ffe35883/5B590AAD/t51.2885-15/e35/20582724_1232904960151674_9179513050598735872_n.jpg",
       }
     ].map(ficher =>
-      <div className="table">
+      <div className="table" key={ficher.id}>
         <div className="ficher desktop">
           {/* <img alt="" src={"/img/fichers/" + ficher.id + ".jpg"} className="background" /> */}
           <img alt="" src="img/fichers/0.jpg" className="background" />
@@ -149,14 +153,26 @@ class Index extends Component {
       recursiveTimeOut(this.easterEggRomanova.bind(this), 555, 100500);
 
 
-    var codeText = (this.props.lang ? "4th international summer festival of arts" : "четвертый международный летний фестиваль искусств").split("").map(letter =>
-      <b onClick={() => this.setState({code: this.state.code + letter})}>{letter}</b>
+    var codeText = (this.props.lang ? "4th international summer festival of arts" : "четвертый международный летний фестиваль искусств")
+    .split("")
+    .map((letter, index) =>
+      <b onClick={() => this.setState({code: this.state.code + letter})} key={index}>
+        {letter}
+      </b>
     );
-    var codeText2 = (this.props.lang ? "the access point" : "точка доступа").split("").map(letter =>
-      <b onClick={() => this.setState({code: this.state.code + letter})}>{letter}</b>
+    var codeText2 = (this.props.lang ? "the access point" : "точка доступа")
+    .split("")
+    .map((letter, index) =>
+      <b onClick={() => this.setState({code: this.state.code + letter})} key={index}>
+        {letter}
+      </b>
     );
-    var codeText3 = (this.props.lang ? "19\xa0July — 5\xa0August" : "19\xa0июля — 5\xa0августа").split("").map(letter =>
-      <b onClick={() => this.setState({code: this.state.code + letter})}>{letter}</b>
+    var codeText3 = (this.props.lang ? "19\xa0July — 5\xa0August" : "19\xa0июля — 5\xa0августа")
+    .split("")
+    .map((letter, index) =>
+      <b onClick={() => this.setState({code: this.state.code + letter})} key={index}>
+        {letter}
+      </b>
     );
 
 

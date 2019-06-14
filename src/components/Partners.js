@@ -25,12 +25,16 @@ class Partners extends Component {
       var mappedBlocks = blocks.map(block => {
         switch(typeof block) {
           case "object": //null
-            return <div className="block empty"></div>;
+            return <div className="block empty" key={block} />;
           case "string":
-            return <div className="block"><span className={block.includes("vasion") || block.includes("торжения") ? "small-margin" : ""}>{block}</span></div>;
+            return <div className="block" key={block}>
+              <span className={block.includes("vasion") || block.includes("торжения") ? "small-margin" : ""}>
+                {block}
+              </span>
+            </div>;
           case "number":
             var partner = partners.find(partner => partner.id === block);
-            return <div className="block">
+            return <div className="block" key={block}>
               <a href={partner.link} target="_blank" rel="noopener noreferrer">
                 <img alt="" src={path + "img/partners/" + (window.devicePixelRatio > 1 ? "1x/" : "1x/") + partner.img} />
               </a>
@@ -56,12 +60,16 @@ class Partners extends Component {
       linedBlocks = blocks4.map(block => {
         switch(typeof block) {
           case "object": //null
-            return;
+            return <div key={block} />
           case "string":
-            return <div className="block"><span className={block.includes("vasion") || block.includes("торжения") ? "small-margin" : ""}>{block}</span></div>;
+            return <div className="block" key={block}>
+              <span className={block.includes("vasion") || block.includes("торжения") ? "small-margin" : ""}>
+                {block}
+              </span>
+            </div>;
           case "number":
             var partner = partners.find(partner => partner.id === block);
-            return <div className="block">
+            return <div className="block" key={block}>
               <a href={partner.link} target="_blank" rel="noopener noreferrer">
                 <img alt="" src={path + "img/partners/1x/" + partner.img} />
               </a>

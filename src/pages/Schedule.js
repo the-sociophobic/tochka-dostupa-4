@@ -42,7 +42,7 @@ export default function() {
     var date = new myDate(day.date, this.state.lang ? "ENG" : "RU");
     var spekts = day.spekts
     .sort((a, b) => a.time > b.time)
-    .map(spekt => {
+    .map((spekt, index) => {
       var buyButton;
       buyButton = <button className="empty">
           {this.lang(["Билет", "Ticket"])}
@@ -52,7 +52,7 @@ export default function() {
         </button>;
 
       return (
-        <article className="spekt-listing">
+        <article className="spekt-listing" key={index}>
           <div className="time">
             {spekt.time}
           </div>
@@ -84,7 +84,7 @@ export default function() {
     });
 
     return (
-      <article className="day-listing">
+      <article className="day-listing" key={date.date()}>
         <h3>{date.date()}</h3>
         <div className="spekts">
           {spekts}
@@ -114,6 +114,7 @@ export default function() {
     <button
       className={this.state.scheduleFilter === button.id ? "active" : ""}
       onClick={() => {this.setState({scheduleFilter: button.id}); window.scrollTo(0, 0);}}
+      key={button.id}
     >
       {capitalize(button.label)}
     </button>
@@ -121,7 +122,13 @@ export default function() {
 
   var navigationContent = this.state.mobile ?
     <div className="container">
-      {filterButtons.map(button => <div className="column center">{button}</div>)}
+      {filterButtons
+        .map((button, index) =>
+          <div className="column center" key={index}>
+            {button}
+          </div>
+        )
+      }
     </div>
     :
     <div className="container">

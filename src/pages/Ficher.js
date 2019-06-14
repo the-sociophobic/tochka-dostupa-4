@@ -23,10 +23,10 @@ export default function(match) {
         <div className="schedule-container">
           {
             !ficher.events ? "" :
-            ficher.events.map(event => {
+            ficher.events.map((event, index) => {
                 var date = new myDate(event.date, this.state.lang ? "ENG" : "RU");
                 var shows = event.shows
-                .map(show => {
+                .map((show, index_lower) => {
                   var buyButton;
 
                   if (event.link)
@@ -52,7 +52,7 @@ export default function(match) {
                   }
 
                   return (
-                    <article className="spekt-listing">
+                    <article className="spekt-listing" key={index_lower}>
                       <div className="time">
                         {show.time}
                       </div>
@@ -82,7 +82,7 @@ export default function(match) {
                   </button>
                 </a>;
 
-              return <article className="day-listing">
+              return <article className="day-listing" key={index}>
                 <h3>{date.date()} {registerButton}</h3>
                 <div className="spekts">
                   {shows}

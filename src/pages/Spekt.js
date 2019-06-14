@@ -73,22 +73,22 @@ export default function(match) {
 
     return (
       <div className="row small" key={day.date}>
-          <div className="dates">
-            <span>{day.additionalDate ? (this.lang(day.additionalDate) + ", ") : ""}</span>
-            <span>{date.date()}, {date.dayOfWeekShort()}</span>
-          </div>
-          <div className="column60">
-            <div className="row">
-              <div className="times">
-                {shows.slice(0, 2)}
-              </div>
-            </div>
-            <div className="row">
-              <div className="times">
-                {shows.slice(2)}
-              </div>
+        <div className="dates">
+          <span>{day.additionalDate ? (this.lang(day.additionalDate) + ", ") : ""}</span>
+          <span>{date.date()}, {date.dayOfWeekShort()}</span>
+        </div>
+        <div className="column60">
+          <div className="row">
+            <div className="times">
+              {shows.slice(0, 2)}
             </div>
           </div>
+          <div className="row">
+            <div className="times">
+              {shows.slice(2)}
+            </div>
+          </div>
+        </div>
       </div>
     );
   });
@@ -136,7 +136,13 @@ export default function(match) {
     if (partner === undefined)
       return;
     return (
-      <a href={partner.link} className={(index % 2 ? "" : "margin")} target="_blank" rel="noopener noreferrer" key={partner.img}>
+      <a
+        href={partner.link}
+        className={(index % 2 ? "" : "margin")}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={partner.img}
+      >
         <div className="partner">
           <div className="row">
             <img alt="" src={"/img/partners/1x/" + partner.img} className="logo"/>
@@ -156,8 +162,8 @@ export default function(match) {
     else
       partnersPairs[Math.floor(index / 2)].push(partner);
   });
-  var partnersMapped = partnersPairs.map(pair =>
-    <div className="row small">
+  var partnersMapped = partnersPairs.map((pair, index) =>
+    <div className="row small" key={index}>
       {pair[0]}
       {pair[1]}
     </div>

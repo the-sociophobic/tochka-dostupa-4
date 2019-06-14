@@ -3,9 +3,14 @@ import BrowserRouter from 'react-router-dom/BrowserRouter';
 import React from 'react';
 import { hydrate } from 'react-dom';
 
+import Loader from 'components/Loader'
+
 hydrate(
   <BrowserRouter>
-    <App />
+    <div>
+      <Loader disappear/>
+      <App />
+    </div>
   </BrowserRouter>,
   document.getElementById('root')
 );
