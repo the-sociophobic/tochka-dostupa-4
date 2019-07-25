@@ -37,6 +37,8 @@ export default function() {
     recursiveTimeOut(easterEggCramp.bind(this), 555, 100500);
   if (this.state.code === "ната")
     recursiveTimeOut(easterEggNata.bind(this), 555, 100500);
+  if (this.state.code === "лев" || this.state.code === "граф" || this.state.code === "любовь")
+    window.open("https://kiss-graph.com")
 
 
   var titleText = [["четвертый международный летний фестиваль искусств", "точка доступа", "19\xa0июля — 5\xa0августа"], ["4th international summer festival of arts", "the access point", "19\xa0July — 5\xa0August"]];
