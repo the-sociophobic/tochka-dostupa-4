@@ -51,39 +51,23 @@ export default function() {
       )
     }))
 
-  this.graphCodes.forEach(node => {
-    node.codes.forEach(code => {
-      if (code === this.state.code) {
-        if (typeof node.url === "string")
-          window.open("https://kiss-graph.com/node/" + node.url)
-        else
-          node.url.forEach(url => window.open("https://kiss-graph.com/node/" + url))
-
-        // this.setState({code: ""})
-      }
-    })
-  })
-
-  if (this.state.code === "рейв")
-    recursiveTimeOut(easterEgg.bind(this), 555, 100500);
-  if (this.state.code === "ййййй")
-    recursiveTimeOut(easterEggRomanova.bind(this), 555, 100500);
-  if (this.state.code === "самп")
-    recursiveTimeOut(easterEggCramp.bind(this), 555, 100500);
-  if (this.state.code === "ната")
-    recursiveTimeOut(easterEggNata.bind(this), 555, 100500);
-
 
   var codeText = this.lang(titleText)
     .map(paragraph =>
-      <h1 style={this.state.mobile ? textStyleMobile : textStyle} key={paragraph}>
-        {
-          paragraph.split("").map((letter, index) =>
-            <b onClick={() => this.setState({code: this.state.code + letter})} key={letter + index}>
-              {letter}
-            </b>
-          )
-        }
+      <h1
+        style={this.state.mobile ? textStyleMobile : textStyle}
+        key={paragraph}
+      >
+        {paragraph
+            .split("")
+            .map((letter, index) =>
+              <b
+                onClick={() => codeInput.bind(this)(letter)}
+                key={index}
+              >
+                {letter}
+              </b>
+            )}
       </h1>
     );
 
@@ -123,4 +107,34 @@ export default function() {
       </div>
     </div>
   );
+}
+
+function codeInput(letter) {
+  let newCode = this.state.code + letter.toLowerCase()
+  console.log(newCode)
+
+  this.graphCodes.forEach(node => {
+    if (typeof node.url === "string" && node.url === newCode)
+      window.open("https://kiss-graph.com/node/" + node.url)
+    else 
+      node.codes.forEach(code => {
+        if (code === newCode) {
+          if (typeof node.url === "string")
+            window.open("https://kiss-graph.com/node/" + node.url)
+          else
+            node.url.forEach(url => window.open("https://kiss-graph.com/node/" + url))
+        }
+      })
+  })
+
+  if (newCode === "рейв")
+    recursiveTimeOut(easterEgg.bind(this), 555, 100500)
+  if (newCode === "ййййй")
+    recursiveTimeOut(easterEggRomanova.bind(this), 555, 100500)
+  if (newCode === "самп")
+    recursiveTimeOut(easterEggCramp.bind(this), 555, 100500)
+  if (newCode === "ната")
+    recursiveTimeOut(easterEggNata.bind(this), 555, 100500)
+
+  this.setState({code: newCode})
 }

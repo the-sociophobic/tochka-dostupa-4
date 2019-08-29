@@ -84,12 +84,12 @@ export default [
       url: "siwjjo",
     },
     {
-      codes: ["артем"],
-      url: ["gevernus2.0"],
-    },
-    {
       codes: ["артем", "арсенян", "арсен", "армянин"],
       url: "artefactpage",
+    },
+    {
+      codes: ["артем"],
+      url: ["gevernus2.0"],
     },
     {
       codes: ["варя"],
