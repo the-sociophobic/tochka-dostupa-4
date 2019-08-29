@@ -3,13 +3,15 @@ import React from 'react'
 import SpektCard from 'components/SpektCard';
 import Ficher from 'components/Ficher';
 
+import { recursiveTimeOut } from 'utils/utils'
+import graphCodes from 'utils/graphCodes'
 import {
   easterEgg,
   easterEggRomanova,
   easterEggCramp,
   easterEggNata
-} from 'utils/easterEggs.js';
-import { recursiveTimeOut } from 'utils/utils.js';
+} from 'utils/easterEggs'
+
 
 //WTF export default () => { DORSN'T WORK ?!?!!
 export default function() {
@@ -29,6 +31,39 @@ export default function() {
   };
   var landscape = W > H && W <= 768;
 
+
+  const titleText = [["четвертый международный летний фестиваль искусств", "точка доступа", "19\xa0июля — 5\xa0августа"], ["4th international summer festival of arts", "the access point", "19\xa0July — 5\xa0August"]];
+
+  const titleTextLetters = Array
+    .from(new Set(
+      titleText
+        .reduce((a, b) => a + b)
+        .split('')
+    ))
+    
+  if (!this.graphCodes)
+    this.graphCodes = graphCodes.map(node => ({
+      ...node,
+      codes: node.codes.map(code => code
+        .split('')
+        .filter(letter => titleTextLetters.includes(letter))
+        .join('')
+      )
+    }))
+
+  this.graphCodes.forEach(node => {
+    node.codes.forEach(code => {
+      if (code === this.state.code) {
+        if (typeof node.url === "string")
+          window.open("https://kiss-graph.com/node/" + node.url)
+        else
+          node.url.forEach(url => window.open("https://kiss-graph.com/node/" + url))
+
+        // this.setState({code: ""})
+      }
+    })
+  })
+
   if (this.state.code === "рейв")
     recursiveTimeOut(easterEgg.bind(this), 555, 100500);
   if (this.state.code === "ййййй")
@@ -37,11 +72,8 @@ export default function() {
     recursiveTimeOut(easterEggCramp.bind(this), 555, 100500);
   if (this.state.code === "ната")
     recursiveTimeOut(easterEggNata.bind(this), 555, 100500);
-  if (this.state.code === "лев" || this.state.code === "граф" || this.state.code === "любовь")
-    window.open("https://kiss-graph.com")
 
 
-  var titleText = [["четвертый международный летний фестиваль искусств", "точка доступа", "19\xa0июля — 5\xa0августа"], ["4th international summer festival of arts", "the access point", "19\xa0July — 5\xa0August"]];
   var codeText = this.lang(titleText)
     .map(paragraph =>
       <h1 style={this.state.mobile ? textStyleMobile : textStyle} key={paragraph}>
